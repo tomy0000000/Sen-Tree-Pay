@@ -6,7 +6,6 @@
 @endsection
 
 @section("js")
-<script type="text/javascript" src="/js/jquery.ns-autogrow.min.js"></script>
 <script type="text/javascript" src="/js/qrcreate.js"></script>
 @endsection
 

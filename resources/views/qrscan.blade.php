@@ -9,11 +9,9 @@
 @endsection
 
 @section("js")
-<script type="text/javascript" src="/js/jsQR.js"></script>
 <script type="text/javascript" src="/js/qrscan.js"></script>
 @endsection
 
-@section("jsname", "qrscan")
 @section("content")
 <video id="video" class="mx-auto" playsinline webkit-playsinline muted></video>
 <div id="loadingMessage">⌛ Loading video...</div>
