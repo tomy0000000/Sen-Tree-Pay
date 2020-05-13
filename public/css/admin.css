@@ -1,0 +1,17 @@
+/*html,
+table {
+    font-size: 20px;
+}*/
+
+.grey-box {
+    width: auto;
+}
+td,
+th {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+#edit_quota_form input[type=checkbox] {
+    width: 1rem;
+    height: 1rem;
+}

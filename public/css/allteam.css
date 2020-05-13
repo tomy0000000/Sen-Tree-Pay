@@ -1,0 +1,13 @@
+.grey-box {
+    width: auto;
+}
+
+td.team-name,
+th.team-name {
+    min-width: 12rem;
+}
+
+td.points,
+th.points {
+    min-width: 6rem;
+}
