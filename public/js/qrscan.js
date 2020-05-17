@@ -100,7 +100,7 @@ function foundQR(code) {
     drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
     drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
     drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-    if (code.data.startsWith("http://2018yzucamp.tyze.me/")) {
+    if (code.data.startsWith(window.location.host)) {
         heroBeep();
         $("#canvas").show();
         $("#video").hide();

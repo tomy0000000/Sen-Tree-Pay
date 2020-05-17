@@ -20,7 +20,7 @@
 @if($user->role < 99)
 <p>您的餘額：{{ $user->quota }}</p>
 @endif
-<form method="GET" action="qr/create">
+<form method="GET" action="create">
     <!-- 金額 -->
     <div class="input-group mb-3">
         <div class="input-group-prepend">

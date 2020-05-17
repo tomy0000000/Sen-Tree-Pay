@@ -157,7 +157,7 @@ class FourziController extends Controller {
             ->merge("../public/img/logo.png", .3, true)
             ->size(500)
             ->margin(2)
-            ->generate("http://2018yzucamp.tyze.me/pay/qr/info/" . $data["serial"], "../public/qrcodes/" . $data["serial"] . ".png");
+            ->generate(url("/qr/info") . "/" . $data["serial"], "../public/qrcodes/" . $data["serial"] . ".png");
         return redirect("/qrcodes/" . $data["serial"] . ".png");
     }
 
@@ -231,11 +231,11 @@ class FourziController extends Controller {
             ->merge("../public/img/logo.png", .3, true)
             ->size(500)
             ->margin(2)
-            ->generate("http://2018yzucamp.tyze.me/pay/qr/info/" . $data["serial"], "../public/qrcodes/" . $data["serial"] . ".jpg");
+            ->generate(url("/qr/info") . "/" . $data["serial"], "../public/qrcodes/" . $data["serial"] . ".jpg");
 	return response()->json([
 		'status' => 1,
-		'pic' => "https://2018yzucamp.tyze.me/pay/qrcodes/". $data["serial"] . ".jpg", 
-		'url' => "https://2018yzucamp.tyze.me/pay/qr/info/". $data["serial"]
+		'pic' => url("/qrcodes") . "/" . $data["serial"] . ".jpg", 
+		'url' => url("/qr/info") . "/" . $data["serial"]
 		]);
     }
 }
