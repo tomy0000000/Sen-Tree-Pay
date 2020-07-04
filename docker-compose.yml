@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  sen-tree-pay-nginx:
+    depends_on:
+      - sen-tree-pay
+    image: tomy0000000/nginx:1.17
+    networks:
+      - awesome-network
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - .:/usr/share/nginx/sen-tree-pay
+  sen-tree-pay:
+    image: tomy0000000/php:7.4-fpm
+    networks:
+      - awesome-network
+    restart: always
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    volumes:
+      - .:/usr/share/nginx/sen-tree-pay
+networks:
+  awesome-network:
