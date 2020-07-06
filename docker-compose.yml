@@ -1,27 +1,28 @@
-version: "3.7"
+version: "3.8"
 
 services:
-  sen-tree-pay-nginx:
+  nginx:
     depends_on:
       - sen-tree-pay
     image: tomy0000000/nginx:1.17
-    networks:
-      - awesome-network
     ports:
       - 80:80
       - 443:443
-    restart: always
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - .:/usr/share/nginx/sen-tree-pay
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=4zi
+      - MYSQL_USER=4zi
+      - MYSQL_PASSWORD=4zi
   sen-tree-pay:
-    image: tomy0000000/php:7.4-fpm
-    networks:
-      - awesome-network
-    restart: always
+    depends_on:
+      - mysql
+    image: tomy0000000/php-fpm:7.4-nginx
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
     volumes:
       - .:/usr/share/nginx/sen-tree-pay
-networks:
-  awesome-network:

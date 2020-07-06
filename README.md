@@ -13,70 +13,53 @@ More backgrounds and story of this project can be found in
 
 
 
-## Installation
+## User Guide
 
-1. Application
+* Clone Application
 
 ```bash
 git clone https://github.com/tomy0000000/Sen-Tree-Pay.git
 cd Sen-Tree-Pay
 ```
 
-2. Dependencies
+* Install Composer
 
-   * With Docker
-
-   ```bash
-   docker run \
-   		--rm --volume="$PWD:/usr/share/nginx/sen-tree-pay" \
+```bash
+docker run --rm \
+		--volume="$PWD:/usr/share/nginx/sen-tree-pay" \
+		--workdir="/usr/share/nginx/sen-tree-pay" \
+		tomy0000000/php-fpm:7.4-nginx \
 		composer install --optimize-autoloader --no-dev
-   ```
-
-   * From scratch
-   
-   ```bash
-   composer install --optimize-autoloader --no-dev
-   ```
-
-## Configure
-
-1. Copy a .env file
-
-```bash
-cp .env.example .env
 ```
 
-2. Generate an APP_KEY
-
-```bash
-echo "base64:"$(openssl rand -base64 32)
-```
-
-3. Edit the following field in `.env`
-
-```bash
-APP_KEY= # from step 2
-DB_CONNECTION=
-DB_HOST=
-DB_PORT=
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
-```
-
-## Run
-
-* With Docker Compose
+* Spawn containers
 
 ```bash
 docker-compose up --detach
-docker-compose exec sen-tree-pay php artisan config:cache
-docker-compose exec sen-tree-pay php artisan view:cache
 ```
 
-* Run from scratch 
+* Install Database (MySQL) Driver
 
-  ```bash
-  php artisan serve
-  ```
+```bash
+docker-compose exec sen-tree-pay docker-php-ext-install mysqli pdo pdo_mysql
+```
+
+* Cache configuration and views
+
+```bash
+docker-compose exec --workdir /usr/share/nginx/sen-tree-pay sen-tree-pay php artisan config:cache
+docker-compose exec --workdir /usr/share/nginx/sen-tree-pay sen-tree-pay php artisan view:cache
+```
+
+* Run Database Migration
+
+```bash
+docker-compose exec --workdir /usr/share/nginx/sen-tree-pay sen-tree-pay php artisan migrate
+```
+
+* Restart Container
+
+```bash
+docker-compose kill -s USR2 sen-tree-pay
+```
 
