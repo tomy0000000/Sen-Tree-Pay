@@ -2,11 +2,11 @@
 @section("title", "儀表板")
 
 @section("css")
-<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
 @endsection
 
 @section("js")
-<script type="text/javascript" src="/js/dashboard.js"></script>
+<script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
 @endsection
 
 @section("content")

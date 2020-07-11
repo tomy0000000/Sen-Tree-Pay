@@ -2,7 +2,7 @@
 @section("title", "已產生QR")
 
 @section("css")
-<link rel="stylesheet" type="text/css" href="/css/qrlist.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/qrlist.css') }}">
 @endsection
 
 @section("content")

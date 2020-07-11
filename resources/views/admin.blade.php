@@ -1,6 +1,6 @@
 @extends("layouts.page") @section("title", "管理員界面") @section("css")
-<link rel="stylesheet" type="text/css" href="/css/admin.css"> @endsection @section("js")
-<script type="text/javascript" src="/js/admin.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}"> @endsection @section("js")
+<script type="text/javascript" src="{{ asset('js/admin.js') }}"></script>
 @endsection @section("content")
 <!--  -->
 <h1 id="guide">快速捷徑</h1>

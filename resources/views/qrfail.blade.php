@@ -2,7 +2,7 @@
 @section("title", "兌換失敗")
 
 @section("css")
-<link rel="stylesheet" type="text/css" href="/css/check-cross-anime.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/check-cross-anime.css') }}">
 @endsection
 
 @section("content")

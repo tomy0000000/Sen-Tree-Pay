@@ -2,7 +2,7 @@
     --container-margin: 1rem;
 }
 body::before {
-    background: url("/img/astronomy-atmosphere-earth-220201.jpg");
+    background: url("../img/astronomy-atmosphere-earth-220201.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

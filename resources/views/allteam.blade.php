@@ -2,11 +2,11 @@
 @section("title", "排行榜")
 
 @section("css")
-<link rel="stylesheet" type="text/css" href="/css/allteam.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/allteam.css') }}">
 @endsection
 
 @section("js")
-<script type="text/javascript" src="/js/allteam.js"></script>
+<script type="text/javascript" src="{{ asset('js/allteam.js') }}"></script>
 @endsection
 
 @section("content")

@@ -2,14 +2,14 @@
 @section("title", "兌換掃描")
 
 @section("css")
-<link rel="stylesheet" type="text/css" href="/css/qrscan.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/qrscan.css') }}">
 <script>
     var _DONE = false;
 </script>
 @endsection
 
 @section("js")
-<script type="text/javascript" src="/js/qrscan.js"></script>
+<script type="text/javascript" src="{{ asset('js/qrscan.js') }}"></script>
 @endsection
 
 @section("content")

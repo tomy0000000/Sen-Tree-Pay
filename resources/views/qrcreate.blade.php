@@ -2,11 +2,11 @@
 @section("title", "建立 QR")
 
 @section("css")
-<link rel="stylesheet" type="text/css" href="/css/qrcreate.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/qrcreate.css') }}">
 @endsection
 
 @section("js")
-<script type="text/javascript" src="/js/qrcreate.js"></script>
+<script type="text/javascript" src="{{ asset('js/qrcreate.js') }}"></script>
 @endsection
 
 @section("content")
