@@ -1,5 +1,7 @@
 # Sen Tree Pay
 
+![demo](demo.png)
+
 Sen Tree Pay is a point system developed and used during 2018 Yuan Ze University College of Informatics Orientation Camp.
 
 Originally hosted at https://2018yzucamp.tyze.me/pay, a clone for demonstration can now be found at https://yzu-ci-camp.tomy.tech/pay.
