@@ -25,7 +25,7 @@ services:
   nginx:
     depends_on:
       - sen-tree-pay
-    image: tomy0000000/nginx:1.17-1.2
+    image: nginx:latest
     ports:
       - "80:80"
       - "443:443"
